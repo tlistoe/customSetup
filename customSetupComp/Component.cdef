@@ -1,0 +1,12 @@
+cflags:
+{
+    -std=c99
+}
+sources:
+{
+	customSetup.c
+}
+requires:
+{
+
+}

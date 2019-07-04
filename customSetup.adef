@@ -1,0 +1,22 @@
+sandboxed: false
+start: auto
+version: 1.0
+maxFileSystemBytes: 1000K
+
+executables:
+{
+	customSetup = ( customSetupComp )
+}
+processes:
+{
+	run:
+	{
+		(customSetup)
+	}
+	
+}
+
+bindings:
+{    
+
+}
