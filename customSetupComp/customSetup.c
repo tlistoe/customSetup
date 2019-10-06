@@ -31,6 +31,20 @@ COMPONENT_INIT
 {
 	LE_INFO("running custom setup scripts");
 
-    system("/etc/init.d/customSetup.sh start");
+    
+	
+	int systemResult;
+
+
+    systemResult = system("/legato/systems/current/apps/customSetup/read-only/var/customSetup.sh start");
+    // Return value of -1 means that the fork() has failed (see man system).
+    if (0 == WEXITSTATUS(systemResult))
+    {
+        LE_INFO("Custom Setup Success");
+    }
+    else
+    {
+        LE_ERROR("Error Custom Setup Failed: (%d)", systemResult);
+    }
 	
 }
