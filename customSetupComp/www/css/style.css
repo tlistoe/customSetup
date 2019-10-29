@@ -76,12 +76,12 @@ td:hover {
 }
 
 .btn:hover {
-    background: #F7781E;
-    background-image: -webkit-linear-gradient(top, #F7781E, #F7781E);
-    background-image: -moz-linear-gradient(top, #F7781E, #F7781E);
-    background-image: -ms-linear-gradient(top, #F7781E, #F7781E);
-    background-image: -o-linear-gradient(top, #F7781E, #F7781E);
-    background-image: linear-gradient(to bottom, #F7781E, #F7781E);
+    background: #fdd900;
+    background-image: -webkit-linear-gradient(top, #fdd900, #fdd900);
+    background-image: -moz-linear-gradient(top, #fdd900, #fdd900);
+    background-image: -ms-linear-gradient(top, #fdd900, #fdd900);
+    background-image: -o-linear-gradient(top, #fdd900, #fdd900);
+    background-image: linear-gradient(to bottom, #fdd900, #fdd900);
     text-decoration: none;
 }
 
