@@ -1,0 +1,11 @@
+#!/bin/sh
+# Copyright 2019 Tyler Listoe 
+#
+# Simply stop all apps
+
+
+        /legato/systems/current/bin/app stop imuLogger
+        /legato/systems/current/bin/app stop gnssLogger
+        /legato/systems/current/bin/app stop rfidTemp
+
+exit 0

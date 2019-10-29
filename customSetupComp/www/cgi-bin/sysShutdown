@@ -1,0 +1,8 @@
+#!/bin/sh
+# Copyright 2019 Tyler Listoe 
+#
+# Simply shutdown
+
+/sbin/sys_shutdown
+
+exit 0

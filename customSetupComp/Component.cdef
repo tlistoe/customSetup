@@ -14,9 +14,15 @@ bundles:
 {
 	file:
 		{
-			//boot script
-			[x] customSetup.sh  /var/customSetup.sh
-			// HTML start page
+		//boot script
+		[x] customSetup.sh  /var/customSetup.sh
+		
+		//app start/stop script	
+		[x] www/cgi-bin/startApps	/var/www/cgi-bin/startApps
+		[x] www/cgi-bin/stopApps	/var/www/cgi-bin/stopApps
+		[x] www/cgi-bin/sysShutdown	/var/www/cgi-bin/sysShutdown
+		
+		// HTML start page
         www/index.html  /var/www/index.html
 
         // Javascript
@@ -31,6 +37,7 @@ bundles:
         www/image/legato_logo.png     /var/www/image/legato_logo.png
         www/image/raspbian.png        /var/www/image/raspbian.png
         www/image/mangoh.png          /var/www/image/mangoh.png
+        www/image/OG_Final_TM.jpg     /var/www/image/OG_Final_TM.jpg
 
         // cgi bin stuff
         [rx] www/cgi-bin/readlogfile    /var/www/cgi-bin/readlogfile

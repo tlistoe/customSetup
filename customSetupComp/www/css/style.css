@@ -61,12 +61,12 @@ td:hover {
 }
 
 .btn {
-    background: #7395A0;
-    background-image: -webkit-linear-gradient(top, #7395A0, #7395A0);
-    background-image: -moz-linear-gradient(top, #7395A0, #7395A0);
-    background-image: -ms-linear-gradient(top, #7395A0, #7395A0);
-    background-image: -o-linear-gradient(top, #7395A0, #7395A0);
-    background-image: linear-gradient(to bottom, #7395A0, #7395A0);
+    background: #3d58a6;
+    background-image: -webkit-linear-gradient(top, #3d58a6, #3d58a6);
+    background-image: -moz-linear-gradient(top, #3d58a6, #3d58a6);
+    background-image: -ms-linear-gradient(top, #3d58a6, #3d58a6);
+    background-image: -o-linear-gradient(top, #3d58a6, #3d58a6);
+    background-image: linear-gradient(to bottom, #3d58a6, #3d58a6);
     font-family: sans-serif;
     color: #ffffff;
     font-size: 20px;
