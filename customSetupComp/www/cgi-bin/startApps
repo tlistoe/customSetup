@@ -1,11 +1,10 @@
 #!/bin/sh
 # Copyright 2019 Tyler Listoe 
 #
-# Simply startall apps
+# Simply start all apps
 
 
 /legato/systems/current/bin/app start imuLogger
 /legato/systems/current/bin/app start gnssLogger
 /legato/systems/current/bin/app start rfidTemp
 
-exit 0
