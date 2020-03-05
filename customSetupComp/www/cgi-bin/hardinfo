@@ -16,8 +16,3 @@ echo -en "$(cm radio | grep RAT | cut -d '(' -f 1)<br /><br />\r\n"
 echo -en "$(cm radio | grep Signal | cut -d '(' -f 1)<br /><br />\r\n"
 echo -en "Distribution: $(cat /etc/issue | cut -d '\' -f 1)<br /><br />\r\n"
 echo -en "Host system: $(uname -a | cut -d '#' -f 1)</p>\r\n"
-if [ "$(cat /etc/issue | cut -c 1-8)" = 'Raspbian' ]; then
-    echo -en "<img src=\"../image/raspbian.png\" style=\"position:absolute;top:40px;right:30px;width:120px;height:120px\" />"
-else
-    echo -en "<img src=\"../image/mangoh.png\" style=\"position:absolute;top:40px;right:30px;width:120px;height:120px\" />"
-fi
