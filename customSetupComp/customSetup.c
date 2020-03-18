@@ -28,11 +28,11 @@
 #define HTTP_CONNECTION_REPORT "<font color=\"black\" >%s:</font>" \
     " Total clients connected: %d</br>\r\n"
 
-
+/*
 
 static FILE *HttpdCmdPipePtr = NULL;
 static FILE *LogFilePipePtr  = NULL;
-
+*/
 //--------------------------------------------------------------------------------------------------
 /**
  * Event handler reference.
@@ -52,7 +52,7 @@ static FILE *LogFilePipePtr  = NULL;
  * Log WiFi events in the given file
  */
 //--------------------------------------------------------------------------------------------------
-static le_result_t WifiEventLog
+/*static le_result_t WifiEventLog
 (
     const char *data,
     FILE *file
@@ -83,7 +83,7 @@ static le_result_t WifiEventLog
     }
 
     return LE_OK;
-}
+}*/
 
 
 //--------------------------------------------------------------------------------------------------
@@ -196,7 +196,7 @@ static void SubscribeApEvents
  *
  */
 //--------------------------------------------------------------------------------------------------
-static void StartWebServer
+/*static void StartWebServer
 (
     void
 )
@@ -257,14 +257,14 @@ static void StartWebServer
     {
         LE_ERROR("ERROR: fopen failed for " LOGFILE ":  errno:%d %s", errno, strerror(errno));
     }
-}
+}*/
 
 //--------------------------------------------------------------------------------------------------
 /**
  * runs the command
  */
 //--------------------------------------------------------------------------------------------------
-static void RunSystemCommand
+/*static void RunSystemCommand
 (
     char *commandStringPtr
 )
@@ -288,7 +288,7 @@ static void RunSystemCommand
         LE_ERROR("Error %s Failed: (%d)", commandStringPtr, systemResult);
     }
 
-}
+}*/
 
 //--------------------------------------------------------------------------------------------------
 /**
@@ -296,7 +296,7 @@ static void RunSystemCommand
  *
  */
 //--------------------------------------------------------------------------------------------------
-static void StopWebServer
+/*static void StopWebServer
 (
     int signalId
 )
@@ -326,7 +326,7 @@ static void StopWebServer
 
     // Stop the AP
    // le_wifiAp_StopInterface(NULL);
-}
+}*/
 
 
 
@@ -352,7 +352,7 @@ COMPONENT_INIT
     {
         LE_ERROR("Error Custom Setup Failed: (%d)", systemResult);
     }
-    
+ /*   
         int rc;
 
     LE_INFO("======== Web Ap ======== on port " HTTP_PORT_NUMBER);
@@ -403,6 +403,6 @@ COMPONENT_INIT
     }
 
     // Config interface is handled in CGI webscript.
-    StartWebServer();
+    StartWebServer();*/
 	
 }
