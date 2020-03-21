@@ -21,14 +21,13 @@ case "$1" in
 #	echo "dhcp-range=wlan1,192.168.20.10,192.168.20.100,24h" >> /etc/dnsmasq.d/dnsmasq.wlan.conf
 #	/etc/init.d/dnsmasq start
 	/legato/systems/current/bin/gnss start
-	mount -a
+	modprobe sdhci-msm
+	mkdir -p /mnt/userrw/sdcard
+	/bin/mount -t auto -o sync /dev/mmcblk0p1 "/mnt/userrw/sdcard"
         ;;
     monitor)
-    ifconfig
         ;;
     stop)
-    	ifdown wlan1
-		gnss stop
         ;;
     *)
         exit 1
