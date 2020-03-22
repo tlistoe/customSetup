@@ -7,7 +7,7 @@ source /etc/run.env
 
 case "$1" in
     start)
-	sleep 20
+	sleep 10
 #	ifup wlan1
 #	/legato/systems/current/bin/wifi ap setssid OptimusGearTest_AF
 #	/legato/systems/current/bin/wifi ap setdriver 1
@@ -20,10 +20,16 @@ case "$1" in
 #	ifconfig wlan1 192.168.20.1 netmask 255.255.255.0 up
 #	echo "dhcp-range=wlan1,192.168.20.10,192.168.20.100,24h" >> /etc/dnsmasq.d/dnsmasq.wlan.conf
 #	/etc/init.d/dnsmasq start
+	/legato/systems/current/bin/app stop dataHub
+	/legato/systems/current/bin/app stop imu
 	/legato/systems/current/bin/gnss start
-	modprobe sdhci-msm
+	/legato/systems/current/bin/app stop ogHeartBeat
+	
+	
 	mkdir -p /mnt/userrw/sdcard
+	modprobe sdhci-msm
 	/bin/mount -t auto -o sync /dev/mmcblk0p1 "/mnt/userrw/sdcard"
+
         ;;
     monitor)
         ;;
