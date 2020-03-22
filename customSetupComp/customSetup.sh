@@ -23,7 +23,7 @@ case "$1" in
 	/legato/systems/current/bin/app stop dataHub
 	/legato/systems/current/bin/app stop imu
 	/legato/systems/current/bin/gnss start
-	/legato/systems/current/bin/app stop ogHeartBeat
+	/legato/systems/current/bin/app start ogHeartbeat
 	
 	
 	mkdir -p /mnt/userrw/sdcard
