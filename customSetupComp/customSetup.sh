@@ -25,10 +25,39 @@ case "$1" in
 	/legato/systems/current/bin/gnss start
 	/legato/systems/current/bin/app start ogHeartbeat
 	
+	RESULT=$?
+	if [ $RESULT -ne 0 ]; then
+	echo 1 > /sys/devices/platform/expander.0/generic_led
+	else
+	echo 1 > /sys/devices/platform/expander.0/tri_led_red
+	echo 0 > /sys/devices/platform/expander.0/tri_led_grn
+	echo 0 > /sys/devices/platform/expander.0/tri_led_blue
+	echo 0 > /sys/devices/platform/expander.0/generic_led
+	fi
+	
+	sleep 5
 	
 	mkdir -p /mnt/userrw/sdcard
 	modprobe sdhci-msm
 	/bin/mount -t auto -o sync /dev/mmcblk0p1 "/mnt/userrw/sdcard"
+	df | grep "mmcblk0p1" 
+	RESULT=$?
+	if [ $RESULT -ne 0 ]; then
+	sleep 5 
+	/bin/mount -t auto -o sync /dev/mmcblk0p1 "/mnt/userrw/sdcard"
+	fi
+	
+	df | grep "mmcblk0p1"
+	RESULT=$?
+	if [ $RESULT -ne 0 ]; then
+	echo 1 > /sys/devices/platform/expander.0/tri_led_red
+	echo 0 > /sys/devices/platform/expander.0/tri_led_grn
+	echo 0 > /sys/devices/platform/expander.0/tri_led_blue
+	echo 0 > /sys/devices/platform/expander.0/generic_led
+	else
+	echo 0 > /sys/devices/platform/expander.0/tri_led_red
+	echo 1 > /sys/devices/platform/expander.0/generic_led
+	fi
 
         ;;
     monitor)
