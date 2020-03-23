@@ -37,7 +37,7 @@ case "$1" in
 	if [ $RESULT -ne 0 ]; then
 	echo 1 > /sys/devices/platform/expander.0/tri_led_red
 	echo 0 > /sys/devices/platform/expander.0/tri_led_grn
-	echo 0 > /sys/devices/platform/expander.0/tri_led_blue
+	echo 0 > /sys/devices/platform/expander.0/tri_led_blu
 	echo 0 > /sys/devices/platform/expander.0/generic_led
 	exit 1
 	else
@@ -51,14 +51,14 @@ case "$1" in
 	/legato/systems/current/bin/app start ogHeartbeat
 	
 	RESULT=$?
-	if [ $RESULT -ne 0 ]; then
+	if [ $RESULT -eq 0 ]; then
 	echo 1 > /sys/devices/platform/expander.0/generic_led
 	else
 	echo 1 > /sys/devices/platform/expander.0/tri_led_red
 	echo 0 > /sys/devices/platform/expander.0/tri_led_grn
-	echo 0 > /sys/devices/platform/expander.0/tri_led_blue
+	echo 0 > /sys/devices/platform/expander.0/tri_led_blu
 	echo 0 > /sys/devices/platform/expander.0/generic_led
-	exit 1
+	exit 2
 	fi
 	exit 0
         ;;
