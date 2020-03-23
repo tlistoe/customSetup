@@ -353,8 +353,16 @@ COMPONENT_INIT
     }
     else
     {
-        LE_ERROR("Error Custom Setup Failed: (%d)", systemResult);
-        piOled_Display("Custom Setup Failure", 0);
+		if (1 == WEXITSTATUS(systemResult))
+		{
+			LE_ERROR("Error Custom Setup SDCARD Failed: (%d)", systemResult);
+			piOled_Display("SDcard Error", 0);
+		}
+		if (2 == WEXITSTATUS(systemResult))
+		{
+			LE_ERROR("Error Custom Setup ogHeartbeat Failed: (%d)", systemResult);
+			piOled_Display("ogHeartBeat Error", 0);
+		}
     }
  /*   
         int rc;
