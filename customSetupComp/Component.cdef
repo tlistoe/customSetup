@@ -8,7 +8,10 @@ sources:
 }
 requires:
 {
-
+	api:
+    {
+        piOled.api
+    }
 }
 bundles:
 {

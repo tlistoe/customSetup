@@ -22,5 +22,5 @@ processes:
 
 bindings:
 {
-
+	customSetup.customSetupComp.piOled -> piOled.piOled
 }

@@ -339,6 +339,8 @@ static void SubscribeApEvents
 COMPONENT_INIT
 {
 	LE_INFO("running custom setup scripts");
+	piOled_Display("Running Custom Setup", 0);
+	
 	
 	int systemResult;
 
@@ -347,10 +349,12 @@ COMPONENT_INIT
     if (0 == WEXITSTATUS(systemResult))
     {
         LE_INFO("Custom Setup Success");
+        piOled_Display("Custom Setup Success", 0);
     }
     else
     {
         LE_ERROR("Error Custom Setup Failed: (%d)", systemResult);
+        piOled_Display("Custom Setup Failure", 0);
     }
  /*   
         int rc;
